@@ -1,0 +1,60 @@
+.normal {
+  .fullScreen_3d{
+    height: 100%;
+    width:100%;
+    position: absolute;
+    top:0;
+    left: 0;
+  }
+  :global{
+    .myPanel {
+      position: absolute;
+      top: 5px;
+      left: 90px;
+    }
+    .cesium-viewer-bottom{
+      display: none;
+    }
+    .cesium-viewer-bottom{
+      display: none;
+    }
+    .distance-legend {
+      background: rgba(38, 38, 38, 0.75);
+      right: 25px;
+    }
+    .navigation-controls {
+      background: rgba(38, 38, 38, 0.75);
+    }
+    #currentPosition {
+      width: auto;
+      height: 30px;
+      position: absolute;
+      bottom: 60px;
+      right: 30px;
+      z-index: 1;
+      font-size: 1rem;
+      color: #FFF;
+      text-shadow: 0 1px 5px #000,0 -2px 5px #000;
+    }
+  }
+  .dimensionSwitcher{
+    position: absolute;
+    bottom: 11.5em;
+    right: 2.5em;
+    z-index: 1;
+    button{
+      position: fixed;
+      top: 320px;
+      right: 29px;
+      height: 25px;
+      background: rgba(38, 38, 38, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #fff;
+      cursor: pointer;
+
+      &:hover{
+        background: rgba(255, 255, 255, 0.3);
+      }
+    }
+  }
+}

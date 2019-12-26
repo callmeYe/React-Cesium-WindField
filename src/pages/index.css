@@ -1,0 +1,8 @@
+.normal {
+  width: 100%;
+}
+
+:global(.dg .c select) {
+  color: black;
+}
+
