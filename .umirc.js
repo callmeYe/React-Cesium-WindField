@@ -40,7 +40,7 @@ function getModulePackageName(module) {
     return null;
   }
   const moduleRelativePath = module.context.substring(nodeModulesPath.length);
-  const [moduleDirName] = moduleRelativePath.split(path.sep);  //将特定文字分隔符 ‘\\' 或 ‘/' 的字符串转换成数组对象。
+  const [moduleDirName] = moduleRelativePath.split(path.sep);
   let packageName = moduleDirName;
   // handle tree shaking
   if (packageName.match('^_')) {

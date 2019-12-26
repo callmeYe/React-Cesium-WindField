@@ -13,7 +13,7 @@ class TDMap extends Component {
     let cesium_Map = new CesiumMap.map();
     let cesium_Control = new CesiumMap.control();
     this.setState({ cesium_Map: cesium_Map });
-    // // 初始化地球
+
     cesium_Map.initMap('cesiumContainer');
     cesium_Map.setView(116.3, 39.9, 15000000);
     cesium_Control.initNavigation();
@@ -22,8 +22,8 @@ class TDMap extends Component {
     const mode ={
       debug:false
     };
-    var panel = new Panel();
-    var wind3D = new CesiumMap.windField(panel,mode);
+    const panel = new Panel();
+    const wind3D = new CesiumMap.windField(panel,mode);
   }
 
   render() {
