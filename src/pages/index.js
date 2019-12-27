@@ -1,4 +1,4 @@
-import React,{Component} from 'react'
+import React from 'react'
 import TDMap from '@/components/TDMap'
 import styles from './index.css';
 

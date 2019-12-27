@@ -5,9 +5,6 @@ import {Panel} from './gui';
 import 'cesium/Widgets/widgets.css';
 
 class TDMap extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   componentDidMount() {
     let cesium_Map = new CesiumMap.map();
@@ -23,23 +20,13 @@ class TDMap extends Component {
       debug:false
     };
     const panel = new Panel();
-    const wind3D = new CesiumMap.windField(panel,mode);
+    new CesiumMap.windField(panel,mode);
   }
 
   render() {
-    function sceneSwitch() {
-      let cesium_control = new CesiumMap.control();
-      let node = document.getElementById('sceneSwitcher');
-      let mode = node.innerText;
-      cesium_control.switchSceneMode(mode, node);
-    }
-
     return (
       <div className={styles.normal}>
         <div id="cesiumContainer" className={styles.fullScreen_3d}>
-          <div className={styles.dimensionSwitcher}>
-            <button id="sceneSwitcher" onClick={sceneSwitch}>2D</button>
-          </div>
         </div>
         <div id="currentPosition"/>
       </div>);
