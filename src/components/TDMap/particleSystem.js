@@ -78,7 +78,7 @@ class ParticleSystem {
 
     applyUserInput(userInput) {
         var maxParticlesChanged = false;
-        if (this.userInput.maxParticles != userInput.maxParticles) {
+        if (this.userInput.maxParticles !== userInput.maxParticles) {
             maxParticlesChanged = true;
         }
 

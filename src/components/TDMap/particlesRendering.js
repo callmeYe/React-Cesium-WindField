@@ -63,8 +63,8 @@ class ParticlesRendering {
         const repeatVertex = 4;
 
         var st = [];
-        for (var s = 0; s < userInput.particlesTextureSize; s++) {
-            for (var t = 0; t < userInput.particlesTextureSize; t++) {
+        for (let s = 0; s < userInput.particlesTextureSize; s++) {
+            for (let t = 0; t < userInput.particlesTextureSize; t++) {
                 for (var i = 0; i < repeatVertex; i++) {
                     st.push(s / userInput.particlesTextureSize);
                     st.push(t / userInput.particlesTextureSize);
@@ -76,9 +76,9 @@ class ParticlesRendering {
         var normal = [];
         const pointToUse = [-1, 1];
         const offsetSign = [-1, 1];
-        for (var i = 0; i < userInput.maxParticles; i++) {
-            for (var j = 0; j < repeatVertex / 2; j++) {
-                for (var k = 0; k < repeatVertex / 2; k++) {
+        for (let i = 0; i < userInput.maxParticles; i++) {
+            for (let j = 0; j < repeatVertex / 2; j++) {
+                for (let k = 0; k < repeatVertex / 2; k++) {
                     normal.push(pointToUse[j]);
                     normal.push(offsetSign[k]);
                     normal.push(0);
@@ -89,7 +89,7 @@ class ParticlesRendering {
 
         const indexSize = 6 * userInput.maxParticles;
         var vertexIndexes = new Uint32Array(indexSize);
-        for (var i = 0, j = 0, vertex = 0; i < userInput.maxParticles; i++) {
+        for (let i = 0, j = 0, vertex = 0; i < userInput.maxParticles; i++) {
             vertexIndexes[j++] = vertex + 0;
             vertexIndexes[j++] = vertex + 1;
             vertexIndexes[j++] = vertex + 2;

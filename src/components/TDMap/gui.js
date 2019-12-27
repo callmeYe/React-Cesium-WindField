@@ -14,7 +14,7 @@ export const defaultParticleSystemOptions = {
     dropRateBump: 0.01,
     speedFactor: 4.0,
     lineWidth: 4.0
-}
+};
 
 export const globeLayers = [
     { name: "WMS:Rainfall", type: "WMS", layer: "Precipitable_water_entire_atmosphere_single_layer", ColorScaleRange: '0.1,66.8' },
@@ -23,12 +23,12 @@ export const globeLayers = [
     { name: "WMS:Wind Speed", type: "WMS", layer: "Wind_speed_gust_surface", ColorScaleRange: '0.1095,35.31' },
     { name: "WorldTerrain", type: "WorldTerrain" },
     { name: "NaturalEarthII", type: "NaturalEarthII" },
-]
+];
 
 export const defaultLayerOptions = {
     "globeLayer": globeLayers[0],
     "WMS_URL": "https://www.ncei.noaa.gov/thredds/wms/gfs-004-files/201809/20180916/gfs_4_20180916_0000_000.grb2",
-}
+};
 
 export class Panel {
     constructor() {
@@ -56,15 +56,15 @@ export class Panel {
 
         const that = this;
         var onLayerOptionsChange = function () {
-            for (var i = 0; i < globeLayers.length; i++) {
-                if (that.layerToShow == globeLayers[i].name) {
+            for (let i = 0; i < globeLayers.length; i++) {
+                if (that.layerToShow === globeLayers[i].name) {
                     that.globeLayer = globeLayers[i];
                     break;
                 }
             }
             var event = new CustomEvent('layerOptionsChanged');
             window.dispatchEvent(event);
-        }
+        };
 
       var gui = new dat.GUI({ autoPlace: false });
       gui.add(that, 'maxParticles', 1, 256 * 256, 1).onFinishChange(onParticleSystemOptionsChange);
@@ -84,7 +84,7 @@ export class Panel {
 
     getUserInput() {
         // make sure maxParticles is exactly the square of particlesTextureSize
-        var particlesTextureSize = Math.ceil(Math.sqrt(this.maxParticles));
+        let particlesTextureSize = Math.ceil(Math.sqrt(this.maxParticles));
         this.maxParticles = particlesTextureSize * particlesTextureSize;
 
         return {
