@@ -49,7 +49,14 @@ var Util = (function () {
       options.source = source;
     }
 
-    var texture = new Cesium.Texture(options);
+    let texture;
+    try {
+      texture = new Cesium.Texture(options);
+    }
+    catch (e) {
+      console.log(e);
+    }
+
     return texture;
   }
 

@@ -31,7 +31,6 @@ cesiumMap.map.prototype = {
       timeline: false,
       infoBox: false,
       selectionIndicator: false,
-      requestRenderMode: true,
       navigationHelpButton: false,
       navigationInstructionsInitiallyVisible: false,
     });
